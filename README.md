@@ -1,6 +1,6 @@
 # A simple Spark setup for semi-structured data queries using s3a with [Zenko](https://www.zenko.io)
 
-This behaves much like AWS EMR and as many of you know much more about Spark than me you can take this much further and do more interesting things. This is provided as an example to gain understanding of Zenko cloudserver and Spark via Hadoop's s3a interface. 
+This behaves something like AWS EMR/Athena and as many of you know much more about Spark than me you can take this much further and do more interesting things. This is provided as an example to gain understanding of Zenko cloudserver and Spark via Hadoop's s3a interface. 
 We will be using  Scality's Zenko Cloudserver and Spark running in Docker containers
 
 ### Get Zenko up and Running
@@ -59,11 +59,12 @@ From the shell prompt, start the interactive Spark shell command:
 	bin/spark-shell
 ```
 After loading the required libraries and verifying the configuration, you should get a prompt: `scala>`
-#### Perform some SparkSQL commands
+#### Perform some Spark commands
+Read in data from S3 in JSON format:
 ```Spark
 	val cool = spark.read.json("s3a://test/data/yelp-a[a:e]")
 ```
-Then you can examine the data:
+Then you can examine the data that was read:
 ```Spark
 	cool.show()
 	cool.printSchema()
@@ -73,7 +74,7 @@ Now create a view that can be used for SQL queries:
    cool.createOrReplaceTempView("coolviews")
 ```
 
-Some sample commands 
+Some sample SQL queries 
 ```Spark
 	val coolest=spark.sql("SELECT * from coolviews order by votes.cool  desc")
 	val funniest=spark.sql("SELECT * from coolviews order by votes.funny  desc")

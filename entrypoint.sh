@@ -2,6 +2,7 @@
 
 set -e
 cp  /hadoop-site.xml $HADOOP_CONF_DIR/core-site.xml 
+# This only sets correctly for localhost, if it's a non-loopback this isn't needed, but it might cause problems...
 echo SPARK_LOCAL_IP=127.0.0.1 > $SPARK_HOME/conf/spark-env.sh
 
 if [[ "$ACCESS_KEY" && "$SECRET_KEY" ]]; then

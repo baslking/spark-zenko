@@ -13,7 +13,7 @@ If you want to use the Orbit portal, currently you need to use the `pensieve-0` 
 You can find the instance ID in the file `~/localMetadata/uuid as root` in the Zenko instance
 This particular build uses port 8001, so I mapped it to 8000, this can change in the future.
 
-If you are using the Orbit version of Zenko Cloudserver you can create users with  access keys and secret keys via the webpage, otherwise the standard key pair is found in the file `~/conf/authdata.json ` with the simple key pair `accessKey1 / verySecretKey1' 
+If you are using the Orbit version of Zenko Cloudserver you can create users with  access keys and secret keys via the  portal [webpage](https://admin.zenko.io/), otherwise the standard key pair is found in the file `~/conf/authdata.json ` with the simple key pair `accessKey1 / verySecretKey1` 
 
 Note that you can do the same with Zenko with data stored on a remote cloud, or using the simple `scality/s3server:mem-latest` to run everything in memory.
 
@@ -83,7 +83,7 @@ Some sample commands
 	starred.show()
 ```
 
-####You can also do non-SQL commands with data that is not structured.  
+#### You can also do non-SQL commands with data that is not structured.  
 
 For instance, we can read in one of these files as text, do a word count on all words in the file and write the result out to your bucket like this:
 ```Spark
@@ -93,7 +93,7 @@ For instance, we can read in one of these files as text, do a word count on all 
 ```
 Which outputs files with counts of all unique "words" that were discovered
 ```Shell
-	aws s3 ls  s3://test/output  --recursive   --profile local --endpoint-url http://127.0.0.1:8000
+	aws s3 ls  s3://test/output  --recursive   --profile <myprofile> --endpoint-url http://127.0.0.1:8000
 		2017-12-06 14:55:33          0 output/_SUCCESS
 		2017-12-06 14:55:32    1618973 output/part-00000
 		2017-12-06 14:55:33    1606378 output/part-00001

@@ -52,13 +52,10 @@ Build the Docker image from *this* directory (with the Dockerfile in it) with a 
 
 Run your docker in interactive mode with access and secret keys as environment variables:
 ```shell
-	docker run -it  --net=host --add-host=moby:127.0.0.1   -e "ACCESS_KEY=RIBMS4UWB075LTXTT5AK" -e "SECRET_KEY=oaFpImOKT13UZlMArT56sQm3DR16EFp6MsTi4HEb" -p 4040:4040 <myvanityname>/spark /bin/bash
+	docker run -it  --net=host --add-host=moby:127.0.0.1   -e "ACCESS_KEY=RIBMS4UWB075LTXTT5AK" -e "SECRET_KEY=oaFpImOKT13UZlMArT56sQm3DR16EFp6MsTi4HEb" -p 4040:4040 <myvanityname>/spark 
 ```
-From the shell prompt, start the interactive Spark shell command:
-```shell
-	bin/spark-shell
-```
-After loading the required libraries and verifying the configuration, you should get a prompt: `scala>`
+
+After starting the container, loading the required libraries and verifying the configuration, you should get a Spark banner and then the `spark-shell` prompt: `scala>`
 #### Perform some Spark commands
 Read in data from S3 in JSON format:
 ```Spark

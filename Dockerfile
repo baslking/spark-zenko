@@ -7,5 +7,5 @@ COPY hadoop-site.xml /hadoop-site.xml
 COPY entrypoint.sh /entrypoint.sh
 
 # Run entrypoint script and start in foreground
-ENTRYPOINT ["/entrypoint.sh"]
-CMD [ "bin/bash", "run" ]
+ENTRYPOINT ["/entrypoint.sh", "bin/spark-shell"]
+

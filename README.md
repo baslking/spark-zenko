@@ -5,7 +5,7 @@ We will be using  Scality's Zenko Cloudserver and Spark running in Docker contai
 
 ### Get Zenko up and Running
 
-If you want to use the Orbit portal, currently you need to use the `pensieve-0` tagged version
+If you want to use the Orbit portal, at the time of the writing you needed to use the `pensieve-0` tagged version.  I think today you can drop the pensieve-o tag and just use zenko/cloudserver. 
 
 ```shell
 	docker run --name zenko -d -p8000:8001 zenko/cloudserver:pensieve-0

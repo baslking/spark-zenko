@@ -43,7 +43,7 @@ Upload some of the data to an S3 bucket, for instance:
 ### Getting [Apache Spark](http://spark.apache.org/) up and running and connected
 
 We'll start with the Getty Docker image for Apache Spark on [github](https://github.com/gettyimages/docker-spark/blob/master/Dockerfile)
-We need to configure it to a non AWS endpoint, and notably a local docker container. The configuration file, hadoop.xml that is added to the docker file is where the configuration happens. 
+We need to configure it to a non AWS endpoint, and notably a local docker container. The configuration file, `hadoop.xml`,  that is added to the docker file is where the configuration happens. 
 
 Build the Docker image from *this* directory (with the Dockerfile in it) with a command like:
 ```shell
